@@ -1,35 +1,71 @@
 # 🧠 Flashy – French Flashcard Learning App
 
-A simple and interactive flashcard app built with Python and Tkinter to help you learn French vocabulary efficiently.
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Tkinter](https://img.shields.io/badge/GUI-Tkinter-green)
+![Pandas](https://img.shields.io/badge/Data-Pandas-orange)
+![Status](https://img.shields.io/badge/Project-Complete-brightgreen)
+
+An interactive flashcard app built with Python to help you learn French vocabulary through repetition and active recall.
+
+---
+
+## 📸 Preview
+
+<img width="1499" height="971" alt="image" src="https://github.com/user-attachments/assets/971797a8-5822-45e8-835c-d08135a3090d" />
+
+<img width="1536" height="960" alt="image" src="https://github.com/user-attachments/assets/a2051a5d-383a-40cf-b382-fa175c513bb5" />
+
 
 ---
 
 ## 🚀 Features
 
-* 📖 Displays random French words
-* 🔄 Automatically flips the card after 3 seconds to show English translation
-* ✅ Mark words as “known” to remove them from the learning pool
-* ❌ Skip difficult words without removing them
-* 💾 Saves progress so you only study words you haven’t learned yet
+* 🎴 Random French word generator
+* ⏱️ Auto-flip card after 3 seconds
+* ✅ Mark words as known (removes them permanently)
+* ❌ Skip words to revisit later
+* 💾 Progress saved automatically using CSV
+* 🔁 Resume learning where you left off
+
+---
+
+## 🧠 How It Works
+
+* The app loads vocabulary from:
+
+  * `words_to_learn.csv` (if available), OR
+  * `french_words.csv` (default dataset)
+
+* Each flashcard:
+
+  1. Shows a French word
+  2. Flips after 3 seconds
+  3. Reveals the English translation
+
+* User interaction:
+
+  * ✔ Known → word removed + progress saved
+  * ✖ Unknown → word stays in rotation
 
 ---
 
 ## 🛠️ Tech Stack
 
-* Python
-* Tkinter (GUI)
-* Pandas (data handling)
+* **Python 3**
+* **Tkinter** → GUI
+* **Pandas** → CSV handling
+* **Random module** → card selection
 
 ---
 
 ## 📂 Project Structure
 
 ```
-day-31/
+flashy-app/
 │── main.py
 │── data/
 │   ├── french_words.csv
-│   └── words_to_learn.csv (generated automatically)
+│   └── words_to_learn.csv
 │── images/
 │   ├── card_front.png
 │   ├── card_back.png
@@ -39,35 +75,22 @@ day-31/
 
 ---
 
-## ▶️ How It Works
+## ⚙️ Installation & Setup
 
-1. The app loads words from:
+### 1. Clone the repository
 
-   * `words_to_learn.csv` (if it exists), or
-   * `french_words.csv` (default dataset)
+```bash
+git clone https://github.com/isha-ha10/flashy-app.git
+cd flashy-app
+```
 
-2. A random French word is shown.
-
-3. After 3 seconds:
-
-   * The card flips to show the English translation.
-
-4. User actions:
-
-   * ✔ **Known** → removes the word and saves progress
-   * ❌ **Unknown** → keeps the word for future review
-
----
-
-## 🧪 How to Run
-
-1. Install dependencies:
+### 2. Install dependencies
 
 ```bash
 pip install pandas
 ```
 
-2. Run the app:
+### 3. Run the app
 
 ```bash
 python main.py
@@ -75,49 +98,55 @@ python main.py
 
 ---
 
-## 💡 Key Concepts Used
+## ⚠️ Important Notes
 
-* Tkinter Canvas for UI rendering
-* `after()` method for timed events
-* Global state management (`current_card`, `flip_timer`)
-* CSV read/write using Pandas
-* Random selection for flashcards
-
----
-
-## ⚠️ Notes
-
-* Make sure image paths are correct or use relative paths:
+* Use **relative paths** for images:
 
 ```python
 PhotoImage(file="images/card_front.png")
 ```
 
-* If `words_to_learn.csv` doesn’t exist, it will be created automatically.
+* Ensure your folder structure matches the project layout
+* `words_to_learn.csv` will be created automatically
 
 ---
 
 ## 🎯 Future Improvements
 
-* Add score tracking
-* Add progress bar (words remaining)
-* Add sound pronunciation
-* Add difficulty levels
+* 📊 Progress bar / words remaining
+* 🔊 Audio pronunciation support
+* 🌙 Dark mode UI
+* 📱 Mobile-friendly version (using Kivy or web app)
+* 🧩 Multiple language support
 
 ---
 
-## 🙌 Credits
+## 🧪 Learning Outcomes
 
-Built as part of a Python learning project to practice GUI development and data handling.
+This project demonstrates:
+
+* GUI design with Tkinter
+* Event-driven programming
+* File persistence with CSV
+* State management in Python apps
+* Real-world app logic (not just scripts)
 
 ---
 
-## 📌 Final Thoughts
+## 🤝 Contributing
 
-This project is a great example of combining:
+Pull requests are welcome. For major changes, open an issue first to discuss ideas.
 
-* UI development
-* Data persistence
-* User interaction
+---
 
-It’s small, but it teaches real-world app logic.
+## ⭐ Show Your Support
+
+If you found this useful, give it a ⭐ on GitHub!
+
+---
+
+## 📌 Author
+
+Built as part of a hands-on Python learning journey focused on building real applications.
+-Isha
+
